@@ -25,9 +25,19 @@ function App() {
   const fetchUserData = (e) => {
     e.preventDefault()
     Axios.get(`https://api.github.com/users/${username}`).then((res) => {
+      setGenerateUserData(res.data);
       console.log(res.data);
     })
   }
+
+  
+  // Function to format the date to "YYYY-MM" format
+  const formatYearMonth = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = date.toLocaleString('default', { month: 'long' });
+    return `${month} ${year}`;
+  };
   
   return (
     <div className="main-container">
@@ -43,18 +53,18 @@ function App() {
           <Row>
             <Col lg={3}>
               <div className="avatar-container">
-                <img src="https://yt3.googleusercontent.com/-CFTJHU7fEWb7BYEb6Jh9gm1EpetvVGQqtof0Rbh-VQRIznYYKJxCaqv_9HeBcmJmIsp2vOO9JU=s900-c-k-c0x00ffffff-no-rj" className='avatar' alt="" />
+                <img src={generateuserData?.avatar_url} className='avatar' alt="user's profile picture" />
               </div>
             </Col>
 
             <Col>
               <div className="user-details">
                 <div className="top-container">
-                  <h3 className='name'>The Octocat</h3>
-                  <span className='date-joined'>Joined 25 Jan 2011</span>
+                  <h3 className='name'>{generateuserData?.name}</h3>
+                  <span className='date-joined'>Joined {generateuserData?.created_at && formatYearMonth(generateuserData.created_at)}</span>
                 </div>
-                <p className='username'>@octocat</p>
-                <p className='bio'>This profile has a really long bio, so long that I'm not really sure if it would be able to fit in this tinnie tiny space.</p>
+                <p className='username'>@{generateuserData?.login}</p>
+                <p className='bio'>{generateuserData?.bio}</p>
                 <div className="git-stats">
                   <div className="stats-header">
                     <span>Repos</span>
@@ -63,32 +73,25 @@ function App() {
                   </div>
 
                   <div className="stats-data">
-                    <span>8</span>
-                    <span>3938</span>
-                    <span>9</span>
+                    <span>{generateuserData?.public_repos}</span>
+                    <span>{generateuserData?.followers}</span>
+                    <span>{generateuserData?.following}</span>
                   </div>
                 </div>
 
                 <div className="contact-container">
                   <div className="links-one">
                     <span>
-                      <FontAwesomeIcon icon={faMapMarkerAlt} /> San Francisco
+                      <FontAwesomeIcon icon={faMapMarkerAlt} /> {generateuserData?.location}
                     </span>
                   
                     <span>
-                      <FontAwesomeIcon icon={faTwitter}/> https://mytwitter.com
+                      <FontAwesomeIcon icon={faTwitter}/> {generateuserData?.twitter_username}
                     </span>
                   </div>
-
-                  <div className="links-one">
-                    <span>
-                      <FontAwesomeIcon icon={faLink} /> https://mylink.com
-                    </span>
-                  
-                    <span>
-                      <FontAwesomeIcon icon={faBuilding}/> agithub
-                    </span>
-                  </div>
+                </div>
+                <div className="btn">
+                <a href={generateuserData?.html_url} target='_blank' rel='noreferrer' className='view-profile-btn'>View full profile</a>
                 </div>
               </div>
             </Col>

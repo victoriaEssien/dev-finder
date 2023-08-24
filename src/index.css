@@ -71,7 +71,7 @@ body {
 }
 
 .name {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
 .date-joined {
@@ -85,7 +85,7 @@ body {
 
 .bio {
   margin-top: 8%;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: #f0f0f0;
 }
@@ -109,9 +109,20 @@ body {
 
 .contact-container {
   margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .links-one {
   font-size: 0.8rem;
   margin-top: 6%;
+}
+
+.view-profile-btn {
+  text-align: center;
+  text-decoration: none;
+  background-color: #006fe6;
+  color: #fff;
+  padding: 12px 105px;
+  border-radius: 8px;
+  font-size: 0.9rem;
 }
