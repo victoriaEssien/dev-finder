@@ -22,7 +22,7 @@ body {
 .input-field {
   background-color: #1F2A48;
   display: inline-block;
-  width: 70%;
+  width: 79%;
   margin-right: 10px;
   border: none;
   color: #fff;
@@ -44,12 +44,14 @@ body {
 .submit-btn {
   display: inline-block;
   padding: 14px 30px;
+  background-color: #0079FE;
 }
 
 .profile-container {
   background-color: #1F2A48;
   margin-top: 5%;
-  padding: 8% 10%;
+  padding: 8% 9%;
+  border-radius: 15px;
 }
 
 .stats-header, .stats-data, .links-one {
@@ -57,14 +59,59 @@ body {
   justify-content: space-between;
 }
 
-.avatar-container {
-}
-
-.user-details {
-
-}
-
 .avatar {
-  width: 15%;
+  width: 80%;
   border-radius: 100%;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-size: 1.8rem;
+}
+
+.date-joined {
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+.username {
+  color: #0079FE;
+}
+
+.bio {
+  margin-top: 8%;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+.git-stats {
+  background-color: #141C2F;
+  padding: 4% 20% 4% 10%;
+  border-radius: 10px;
+  margin-top: 8%;
+}
+
+.stats-header span {
+  font-size: 0.8rem;
+  color: #cccccc;
+}
+
+.stats-data span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.contact-container {
+  margin-top: 10%;
+}
+
+.links-one {
+  font-size: 0.8rem;
+  margin-top: 6%;
 }
