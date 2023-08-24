@@ -12,13 +12,12 @@ body {
 
 .main-container {
   width: 50%;
-  margin: 8% auto;
+  margin: 5% auto;
 }
 
 .input-container {
   margin-top: 5%;
 }
-
 
 .input-field {
   background-color: #1F2A48;
@@ -45,4 +44,27 @@ body {
 .submit-btn {
   display: inline-block;
   padding: 14px 30px;
+}
+
+.profile-container {
+  background-color: #1F2A48;
+  margin-top: 5%;
+  padding: 8% 10%;
+}
+
+.stats-header, .stats-data, .links-one {
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar-container {
+}
+
+.user-details {
+
+}
+
+.avatar {
+  width: 15%;
+  border-radius: 100%;
 }
