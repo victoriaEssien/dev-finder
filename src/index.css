@@ -10,3 +10,39 @@ body {
   box-sizing: border-box;
 }
 
+.main-container {
+  width: 50%;
+  margin: 8% auto;
+}
+
+.input-container {
+  margin-top: 5%;
+}
+
+
+.input-field {
+  background-color: #1F2A48;
+  display: inline-block;
+  width: 70%;
+  margin-right: 10px;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 15px 20px;
+}
+
+.input-field::placeholder {
+  color: #cccccc;
+}
+
+.input-field:focus {
+  background-color: #1F2A48;
+  box-shadow: none;
+  border: 1px solid #cccccc;
+  color: #fff;
+}
+
+.submit-btn {
+  display: inline-block;
+  padding: 14px 30px;
+}
