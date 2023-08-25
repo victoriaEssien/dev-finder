@@ -22,9 +22,23 @@ function App() {
   const [generateuserData, setGenerateUserData] = useState(null)
   const [username, setUsername] = useState("")
   const [showProfile, setShowProfile] = useState(false);
+  const [inputError, setInputError] = useState(false);
 
   const fetchUserData = (e) => {
     e.preventDefault()
+
+    if (username.trim() === '') {
+      setInputError(true);
+
+      setTimeout(() => {
+        setInputError(false)
+      }, 3000)
+
+      return;
+    }
+
+    setInputError(false)
+
     Axios.get(`https://api.github.com/users/${username}`).then((res) => {
       setGenerateUserData(res.data);
       setShowProfile(true)
@@ -62,6 +76,10 @@ function App() {
           </Form>
         </div>
 
+        {inputError && (
+          <p className='error'>Please enter a valid username</p>
+        )}
+
         {showProfile && generateuserData && (
             <div className="profile-container">
             <Row>
@@ -98,17 +116,17 @@ function App() {
                   <div className="contact-container">
                     <div className="links-one">
                     {generateuserData?.location && (
-                      <span>
+                      <p>
                         <FontAwesomeIcon icon={faMapMarkerAlt} />{' '}
                         {generateuserData?.location}
-                      </span>
+                      </p>
                     )}
                     
                     {generateuserData?.twitter_username && (
-                      <span>
+                      <p>
                         <FontAwesomeIcon icon={faTwitter} />{' '}
                         {generateuserData?.twitter_username}
-                      </span>
+                      </p>
                     )}
                     </div>
                   </div>

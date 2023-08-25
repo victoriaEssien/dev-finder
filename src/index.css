@@ -10,6 +10,10 @@ body {
   box-sizing: border-box;
 }
 
+.error {
+  color: #ef6565;
+}
+
 .null-value {
   color: #808080;
 }
@@ -126,11 +130,54 @@ body {
   text-decoration: none;
   background-color: #006fe6;
   color: #fff;
-  padding: 12px 105px;
+  display: block;
+  padding: 16px 30px;
   border-radius: 8px;
   font-size: 0.9rem;
 }
 
 .view-profile-btn:hover {
   background-color: #0079FE;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  body { margin: 0 5%; }
+
+  .main-container { margin-top: 15%; }
+
+  .main-container { width: 100%; }
+
+  .input-container { margin-top: 10%; }
+
+  .input-field {
+    width: 100%;
+    display: block;
+  }
+
+  .submit-btn {
+    margin-top: 8%;
+    margin-bottom: 5%;
+    width: 100%;
+  }
+
+  .profile-container { margin-top: 15%; }
+
+  .avatar-container { text-align: center; }
+
+  .avatar { width: 50%; }
+
+  .top-container {
+    margin-top: 10%;
+    display: block;
+  }
+
+  .username { margin-top: 3%; }
+
+  .bio { font-size: 1.1rem; }
+
+  .git-stats { padding: 8% 10%; }
+
+  .links-one { display: block; }
+
 }
