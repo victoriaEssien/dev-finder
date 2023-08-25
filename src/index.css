@@ -10,6 +10,10 @@ body {
   box-sizing: border-box;
 }
 
+.null-value {
+  color: #808080;
+}
+
 .main-container {
   width: 50%;
   margin: 5% auto;
@@ -60,7 +64,7 @@ body {
 }
 
 .avatar {
-  width: 80%;
+  width: 100%;
   border-radius: 100%;
 }
 
@@ -71,7 +75,7 @@ body {
 }
 
 .name {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
 }
 
 .date-joined {
@@ -113,7 +117,7 @@ body {
 }
 
 .links-one {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-top: 6%;
 }
 
@@ -125,4 +129,8 @@ body {
   padding: 12px 105px;
   border-radius: 8px;
   font-size: 0.9rem;
+}
+
+.view-profile-btn:hover {
+  background-color: #0079FE;
 }
